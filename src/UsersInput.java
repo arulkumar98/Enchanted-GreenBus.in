@@ -21,7 +21,7 @@ public class UsersInput {
         System.out.println("Enter the E-mail address");
         this.email = in.next();
         String regex = "^(.+)@(.+)$";
-        while (!email.matches(regex)){
+        while (!email.matches(regex)) {
             System.out.println("Please enter the valid e-mail address");
             this.email = in.next();
         }
@@ -37,20 +37,20 @@ public class UsersInput {
         int capacity = 0;
         int booked = 0;
         Scanner in = new Scanner(System.in);
-        for(Bus bus:buses ){
-            if (bus.getBusNo() == busNo){
+        for (Bus bus : buses) {
+            if (bus.getBusNo() == busNo) {
                 capacity = bus.getCap();
-                bus.setTicketFare(+200) ;
+                bus.setTicketFare(+200);
             }
-            for (UsersInput b:bookings) {
-                if (b.busNo == busNo && date.equals(date)){
+            for (UsersInput b : bookings) {
+                if (b.busNo == busNo && date.equals(date)) {
                     booked++;
                 }
             }
         }
-        if (booked>capacity){
+        if (booked > capacity) {
             return false;
-        }else
+        } else
             return true;
     }
 }
